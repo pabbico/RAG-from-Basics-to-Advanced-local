@@ -4,7 +4,7 @@ A complete RAG (Retrieval Augmented Generation) pipeline built from scratch on a
 
 Companion code for the **RAG from Basics to Advanced** series on AWS Builder Center.
 
-📚 **Read the full series:** [builder.aws.com/community/@pabbico](https://builder.aws.com/community/@pabbico)
+📚 **Read the full series:** [aws builder](https://builder.aws.com/community/@pabbico)
 
 ---
 
