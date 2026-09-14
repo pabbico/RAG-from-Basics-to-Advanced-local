@@ -1,0 +1,7 @@
+chromadb
+sentence-transformers
+pypdf
+python-docx
+notebook
+ipykernel
+ipywidgets
