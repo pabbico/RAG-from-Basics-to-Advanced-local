@@ -214,8 +214,3 @@ Things that cost time during development, in case they save you some.
 
 👉 [builder.aws.com/community/@pabbico](https://builder.aws.com/community/@pabbico)
 
----
-
-## License
-
-MIT
