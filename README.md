@@ -4,7 +4,7 @@ A complete RAG (Retrieval Augmented Generation) pipeline built from scratch on a
 
 Companion code for the **RAG from Basics to Advanced** series on AWS Builder Center.
 
-📚 **Read the full series:** [aws builder](https://builder.aws.com/community/@pabbico)
+📚 **Read the full series:** [builder.aws.com/community/@pabbico](https://builder.aws.com/community/@pabbico)
 
 ---
 
@@ -84,7 +84,7 @@ All content is fictional.
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/pabbico/RAG-from-Basics-to-Advanced-local.git
+git clone https://github.com/<your-username>/RAG-from-Basics-to-Advanced-local.git
 cd RAG-from-Basics-to-Advanced-local
 ```
 
@@ -173,7 +173,7 @@ Things that cost time during development, in case they save you some.
 
 **The most expensive bugs don't raise errors.** Word tables are skipped by `doc.paragraphs` with no warning. Text past the embedding model's token limit is truncated silently, and the chunk still *prints* complete — only its embedding is short. In both cases the pipeline runs fine and retrieval just quietly can't find things. Printing and reading the output at each stage is the cheapest debugging available.
 
-**The embedding model's token limit caps chunk size, independent of the LLM.** `all-MiniLM-L6-v2` stops at 256 tokens. On this dataset that worked out to roughly 2.75 characters per token — well under the usual English average of ~4, because the documents are dense with codes, numbers, and punctuation. The practical ceiling here is around 700 characters per chunk, not the 1000+ you might assume. Measure the ratio on your own content.
+**The embedding model's token limit caps chunk size, independent of the LLM.** `all-MiniLM-L6-v2` stops at 256 tokens, and anything longer is truncated silently. That imposes a ceiling on chunk size that has nothing to do with the LLM's context window. The ratio depends entirely on your content — this dataset measured 4.74 characters per token, putting the practical ceiling around 1,200 characters per chunk. Documents dense with codes, IDs, or numbers tokenize far less efficiently and would land well below that. The notebook computes the ratio from your own chunks rather than assuming a rule of thumb.
 
 **Similarity scores are relative, not absolute.** A query and a paraphrase sharing zero words scored 0.59; an unrelated sentence scored 0.10. Nothing scored above 0.9 even when meaning was near-identical. Read the ordering, not the number — which is why retrieval takes top-K rather than applying a fixed score threshold.
 
