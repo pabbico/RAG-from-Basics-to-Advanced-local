@@ -84,7 +84,7 @@ All content is fictional.
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/<your-username>/RAG-from-Basics-to-Advanced-local.git
+git clone https://github.com/pabbico/RAG-from-Basics-to-Advanced-local.git
 cd RAG-from-Basics-to-Advanced-local
 ```
 
